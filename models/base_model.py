@@ -11,11 +11,11 @@ class BaseModel:
         self.updated_at = self.created_at
 
     def __str__(self):
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         self.updated_at = datetime.now()
-	models.storage.save()
 
     def to_dict(self):
         result_dict = self.__dict__.copy()
